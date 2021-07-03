@@ -1,5 +1,5 @@
 [![build](https://github.com/hdholm/jose/actions/workflows/build.yml/badge.svg)](https://github.com/hdholm/jose/actions/workflows/build.yml)
-[![coverage](https://github.com/hdholm/jose/actions/workflows/coverage.yml/badge.svg)](https://github.com/hdholm/jose/actions/workflows/coverage.yml)
+[![codecov](https://codecov.io/gh/hdholm/jose/branch/localActions/graph/badge.svg?token=H3L5GR1YEL)](https://codecov.io/gh/hdholm/jose)
 
 # Welcome to José!
 
