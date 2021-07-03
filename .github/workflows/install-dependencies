@@ -16,7 +16,7 @@ debian:*|ubuntu:*)
     apt clean
     apt update
     apt -y install build-essential pkg-config libssl-dev zlib1g-dev \
-                   libjansson-dev ${COMMON}
+                   gcovr libjansson-dev ${COMMON}
     ;;
 
 fedora:*)
