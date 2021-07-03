@@ -1,5 +1,5 @@
-[![build](https://github.com/latchset/jose/actions/workflows/build.yml/badge.svg)](https://github.com/latchset/jose/actions/workflows/build.yml)
-[![coverage](https://github.com/latchset/jose/actions/workflows/coverage.yml/badge.svg)](https://github.com/latchset/jose/actions/workflows/coverage.yml)
+[![build](https://github.com/hdholm/jose/actions/workflows/build.yml/badge.svg)](https://github.com/hdholm/jose/actions/workflows/build.yml)
+[![coverage](https://github.com/hdholm/jose/actions/workflows/coverage.yml/badge.svg)](https://github.com/hdholm/jose/actions/workflows/coverage.yml)
 
 # Welcome to José!
 
