@@ -19,7 +19,7 @@ jobs:
       - name: Install build dependencies
         run: bash .github/workflows/install-dependencies
 
-      - name: Build tang
+      - name: Build jose
         run: |
           mkdir -p build && cd build
           export ninja=$(command -v ninja)
@@ -42,7 +42,7 @@ jobs:
           cd build
           export ninja=$(command -v ninja)
           [ -z "${ninja}" ] && export ninja=$(command -v ninja-build)
-          gcovr -r .. -f ../src -f src/ -e ../tests -e tests -x coverage.xml
+          gcovr -r .. -f ../cmd -f cmd/ -f ../lib -f lib/ -e ../tests -e tests -x coverage.xml
       - uses: codecov/codecov-action@v1
         with:
           file: build/coverage.xml
