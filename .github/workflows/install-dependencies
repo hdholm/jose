@@ -22,7 +22,7 @@ debian:*|ubuntu:*)
         sleep 5
     done
     ;;
-
+--allowerasing
 fedora:*)
     echo 'max_parallel_downloads=10' >> /etc/dnf/dnf.conf
     dnf -y clean all
@@ -36,7 +36,7 @@ fedora:*)
     yum install -y yum-utils epel-release
     yum-config-manager -y --enable crb \
         || yum-config-manager -y --enable powertools || :
-    yum -y --allowerasing install ${COMMON}
+    yum -y install ${COMMON}
     yum-builddep -y jose
     ;;
 
