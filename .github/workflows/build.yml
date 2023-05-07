@@ -14,7 +14,9 @@ jobs:
           - clang
         os:
           - fedora:latest
+          - centos:7
           - quay.io/centos/centos:stream8
+          - quay.io/centos/centos:stream9
           - debian:testing
           - debian:latest
           - ubuntu:rolling
@@ -22,12 +24,6 @@ jobs:
           - ubuntu:focal
         stable:: [true]
         include:
-          - compiler: gcc
-            os: quay.io/centos/centos:stream9
-            stable: true
-          - compiler: gcc
-            os: centos:7
-            stable: true
           - compiler: gcc
             os: fedora:rawhide
             stable: false
