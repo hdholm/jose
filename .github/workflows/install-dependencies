@@ -34,8 +34,8 @@ fedora:*)
     yum -y clean all
     yum -y --setopt=deltarpm=0 update
     yum install -y yum-utils epel-release
-    yum-config-manager -y --set-enabled crb \
-        || yum-config-manager -y --set-enabled powertools || :
+    yum-config-manager -y --enable crb \
+        || yum-config-manager -y --enable powertools || :
     yum -y --allowerasing install ${COMMON}
     yum-builddep -y jose
     ;;
