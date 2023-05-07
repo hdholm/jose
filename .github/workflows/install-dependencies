@@ -46,7 +46,7 @@ fedora:*)
     dnf install -y dnf-plugins-core epel-release
     dnf config-manager -y --set-enabled powertools \
         || dnf config-manager -y --set-enabled crb || :
-    dnf -y install ${COMMON}
+    dnf -y install --allowerasing ${COMMON}
     dnf builddep -y jose
     ;;
 
