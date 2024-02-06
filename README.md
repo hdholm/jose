@@ -121,10 +121,10 @@ You can even run the tests if you'd like:
 
     $ meson test
 
-To build a FreeBSD, HardenedBSD or OPNsense package
+To build a FreeBSD or OPNsense package
 use:
 
-    (as root) # pkg install meson pkgconf jansson openssl asciidoc jq
+    (as root) # pkg install meson pkgconf jansson asciidoc jq
 
     $ mkdir build && cd build
     $ meson setup .. --prefix=/usr/local
@@ -133,4 +133,4 @@ use:
     (as root) # ninja install
 
 Once built it does not require meson and pkgconf,
-but still requires jansson and openssl.
+but still requires jansson.
