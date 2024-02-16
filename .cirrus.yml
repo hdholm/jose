@@ -1,6 +1,6 @@
-task:
-  skip: !changesInclude('**.md')
-  freebsd_instance:
+freebsd_instance:
+  task:
+    skip: !changesInclude('**.md')
     matrix:
       - image_family: freebsd-13-2
       - image_family: freebsd-14-0
