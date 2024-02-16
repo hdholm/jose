@@ -1,0 +1,13 @@
+freebsd_instance:
+  matrix:
+    - image_family: freebsd-13-2
+    - image_family: freebsd-14-0
+    - image_famuily: freebsd-15-0-snap
+
+task:
+  install_script: pkg install -y meson pkgconf jansson asciidoc jq
+  script:
+    - mkdir build && cd build
+    - meson setup .. --prefix=/usr/local
+    - ninja
+    - meson test
