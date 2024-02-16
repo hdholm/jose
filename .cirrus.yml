@@ -1,10 +1,11 @@
 freebsd_instance:
-  task:
-    skip: !changesInclude('**.md')
-    matrix:
-      - image_family: freebsd-13-2
-      - image_family: freebsd-14-0
-      - image_famuily: freebsd-15-0-snap
+
+task:
+  skip: !changesInclude('**.md')
+  matrix:
+    - image_family: freebsd-13-2
+    - image_family: freebsd-14-0
+    - image_famuily: freebsd-15-0-snap
 
   install_script: pkg install -y meson pkgconf jansson asciidoc jq
   script:
