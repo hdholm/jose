@@ -1,5 +1,5 @@
 task:
-  skip: "!changesInclude('**.md')"
+  skip: "changesIncludeOnly('**.md')"
   freebsd_instance:
     matrix:
       - image_family: freebsd-13-2
