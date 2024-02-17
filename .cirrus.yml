@@ -1,5 +1,5 @@
 task:
-  skip: "changesIncludeOnly('**.md')"
+  skip: "changesIncludeOnly('**.md','.github/workflows/**')"
   freebsd_instance:
     matrix:
       - image_family: freebsd-13-2
@@ -8,8 +8,15 @@ task:
 
   install_script: pkg install -y meson pkgconf jansson asciidoc jq
 
-  script:
+  shared_script:
     - mkdir build && cd build
+    - meson setup .. --prefix=/usr/local
+    - ninja
+    - meson test
+
+  static_script:
+    - mkdir build && cd build
+    - meson configure -Dbuild_static=true
     - meson setup .. --prefix=/usr/local
     - ninja
     - meson test
