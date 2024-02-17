@@ -13,14 +13,14 @@ task:
       static_script:
       - mkdir build_static && cd build_static
       - meson setup .. --prefix=/usr/local
-      - meson configure -Dbuild_static=true -Dbuild_shared=false
+      - meson configure -Dbuild_static=true -Dbuild_dynamic=false
       - ninja
       - meson test
 
-    - name: BuildShared
+    - name: BuildDynamic
       shared_script:
-      - mkdir build_shared && cd build_shared
+      - mkdir build_dynamic && cd build_dynamic
       - meson setup .. --prefix=/usr/local
-      - meson configure -Dbuild_shared=true -D build_static=false
+      - meson configure -Dbuild_dynamic=true -D build_static=false
       - ninja
       - meson test
