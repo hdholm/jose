@@ -9,7 +9,7 @@ task:
   install_script: pkg install -y meson pkgconf jansson asciidoc jq
 
   matrix:
-    - name BuildStatic
+    - name: BuildStatic
       static_script:
       - mkdir build_static && cd build_static
       - meson setup .. --prefix=/usr/local
@@ -17,7 +17,7 @@ task:
       - ninja
       - meson test
 
-    - name BuildShared
+    - name: BuildShared
       shared_script:
       - mkdir build_shared && cd build_shared
       - meson setup .. --prefix=/usr/local
