@@ -10,7 +10,7 @@ task:
 
   build_script:
     - mkdir build && cd build
-    - meson configure -Dbuild_static=true
+    - meson configure .. --prefix=/usr/local -Dbuild_static=true
     - meson setup .. --prefix=/usr/local
     - ninja
     - meson test
