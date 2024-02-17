@@ -1,5 +1,5 @@
 task:
-  skip: "changesIncludeOnly('**.md')"
+  skip: "changesIncludeOnly('**.md','.github/workflows/**')"
   freebsd_instance:
     matrix:
       - image_family: freebsd-13-2
