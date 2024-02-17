@@ -8,9 +8,19 @@ task:
 
   install_script: pkg install -y meson pkgconf jansson asciidoc jq
 
-  build_script:
-    - mkdir build && cd build
-    - meson setup .. --prefix=/usr/local
-    - meson configure -Dbuild_static=true
-    - ninja
-    - meson test
+  matrix:
+    - name BuildStatic
+      static_script:
+      - mkdir build_static && cd build_static
+      - meson setup .. --prefix=/usr/local
+      - meson configure -Dbuild_static=true -Dbuild_shared=false
+      - ninja
+      - meson test
+
+    - name BuildShared
+      shared_script:
+      - mkdir build_shared && cd build_shared
+      - meson setup .. --prefix=/usr/local
+      - meson configure -Dbuild_shared=true -D build_static=false
+      - ninja
+      - meson test
