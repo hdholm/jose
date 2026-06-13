@@ -5,7 +5,6 @@ COMMON="meson curl git file bzip2 asciidoc jq ${CC}"
 case "${DISTRO}" in
 osx:*)
     brew update
-    brew upgrade
     for pkg in pkg-config jansson openssl zlib meson; do
         brew ls --versions "${pkg}" || brew install "${pkg}"
         brew outdated "${pkg}" || brew upgrade "${pkg}" || true
@@ -29,14 +28,6 @@ debian:*|ubuntu:*)
     dnf -y clean all
     dnf -y --setopt=deltarpm=0 update
     dnf -y install ${COMMON} pkgconfig openssl-devel zlib-devel jansson-devel
-    ;;
-
-centos:7)
-    yum -y clean all
-    yum -y --setopt=deltarpm=0 update
-    yum install -y yum-utils epel-release centos-release-scl llvm-toolset-7
-    yum -y install ${COMMON}
-    yum-builddep -y jose
     ;;
 
 *centos:stream*)
