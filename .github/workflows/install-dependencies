@@ -4,7 +4,7 @@ COMMON="meson curl git file bzip2 asciidoc jq ${CC}"
 
 case "${DISTRO}" in
 osx:*)
-    brew update --quiet
+    brew update
     for pkg in pkg-config jansson openssl zlib meson; do
         brew ls --versions "${pkg}" || brew install "${pkg}"
         brew outdated "${pkg}" || brew upgrade "${pkg}" || true
